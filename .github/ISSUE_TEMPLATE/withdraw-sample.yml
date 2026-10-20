@@ -1,0 +1,23 @@
+name: 撤回样本
+description: 申请删除本仓库中的手写样本
+title: "[撤回] 样本 ID"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请只填写样本 ID，不要粘贴其他个人信息。维护者会在 30 天内处理。
+        已分发的副本和已完成的训练无法撤回，详见 PRIVACY.md。
+  - type: input
+    id: sample_ids
+    attributes:
+      label: 样本 ID
+      description: 多个 ID 用英文逗号分隔；可在 JSONL 的 id 字段中找到。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我确认这些样本由我本人书写，或我有权代表书写者提出删除请求。
+          required: true
